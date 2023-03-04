@@ -6,7 +6,7 @@
 "    By: tnaton <marvin@42.fr>                      +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/07/25 19:13:36 by tnaton            #+#    #+#              "
-"    Updated: 2022/09/22 17:21:08 by tnaton           ###   ########.fr        "
+"    Updated: 2023/02/28 17:42:35 by tnaton           ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -43,7 +43,7 @@ filetype plugin on
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=5
+set so=0
 
 " toggle mouse
 :set mouse=a
@@ -155,6 +155,16 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+"let g:cpp_simple_highlight = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " 42 Norm
