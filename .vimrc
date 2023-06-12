@@ -6,7 +6,7 @@
 "    By: tnaton <marvin@42.fr>                      +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/07/25 19:13:36 by tnaton            #+#    #+#              "
-"    Updated: 2023/02/28 17:42:35 by tnaton           ###   ########.fr        "
+"    Updated: 2023/05/22 12:09:38 by tnaton           ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -37,6 +37,8 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 filetype plugin on
+
+filetype plugin indent on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -312,6 +314,11 @@ nnoremap k j
 nnoremap l k
 nnoremap ; l
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_nasm_nasm_args = '-f elf64'
+
+let g:rustfmt_autosave = 1
+
+autocmd BufNewFile,BufRead *.s set filetype=nasm
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal
