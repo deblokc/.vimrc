@@ -16,7 +16,7 @@ endif
 let g:loaded_syntastic_objcpp_gcc_checker = 1
 
 if !exists('g:syntastic_objcpp_compiler_options')
-    let g:syntastic_objcpp_compiler_options = '-std=gnu99'
+    let g:syntastic_objcpp_compiler_options = ''
 endif
 
 let s:save_cpo = &cpo

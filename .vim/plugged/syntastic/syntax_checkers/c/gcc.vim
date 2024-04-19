@@ -16,7 +16,7 @@ endif
 let g:loaded_syntastic_c_gcc_checker = 1
 
 if !exists('g:syntastic_c_compiler_options')
-    let g:syntastic_c_compiler_options = '-std=gnu99'
+    let g:syntastic_c_compiler_options = '-Wall -Wextra -Werror -Wpedantic -Wformat=2 -Wformat-overflow=2 -Wformat-truncation=2 -Wstringop-overflow=4 -Winit-self -ftrapv -Wdate-time'
 endif
 
 let s:save_cpo = &cpo

@@ -6,7 +6,7 @@
 "    By: tnaton <marvin@42.fr>                      +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/07/25 19:13:36 by tnaton            #+#    #+#              "
-"    Updated: 2023/05/22 12:09:38 by tnaton           ###   ########.fr        "
+"    Updated: 2024/04/18 20:02:21 by tnaton           ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -309,16 +309,25 @@ colorscheme codedark
 
 autocmd BufEnter *.tpp :setlocal filetype=cpp
 
-nnoremap j h
-nnoremap k j
-nnoremap l k
-nnoremap ; l
+noremap j h
+noremap k j
+noremap l k
+noremap ; l
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_nasm_nasm_args = '-f elf64'
 
 let g:rustfmt_autosave = 1
 
 autocmd BufNewFile,BufRead *.s set filetype=nasm
+
+
+let g:syntastic_c_compiler_options = '-m32 -Wall -Wextra -Werror -Wpedantic -Wformat=2 -Wformat-overflow=2 -Wformat-truncation=2 -Wstringop-overflow=4 -Winit-self -ftrapv -Wdate-time -Wshadow -Wshadow'
+
+let g:syntastic_c_include_dirs = ['../inc', 'inc', '../../../libs/curl-8.2.1/include/curl', 'libs/curl-8.2.1/include/curl']
+
+augroup filetypedetect
+    au! BufRead,BufNewFile *.h setfiletype c
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal
